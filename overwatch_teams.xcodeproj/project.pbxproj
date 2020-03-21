@@ -12,6 +12,8 @@
 		845BB6462426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB6452426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift */; };
 		845BB6492426360300A4F8C8 /* TeamsRealmRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB6482426360300A4F8C8 /* TeamsRealmRepositoryMock.swift */; };
 		845BB64B2426361B00A4F8C8 /* TeamsWebServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64A2426361B00A4F8C8 /* TeamsWebServiceMock.swift */; };
+		845BB64D2426381700A4F8C8 /* TeamsRouterImp+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64C2426381700A4F8C8 /* TeamsRouterImp+Spec.swift */; };
+		845BB64F2426398600A4F8C8 /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */; };
 		845E7385242069930056609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7384242069930056609D /* AppDelegate.swift */; };
 		845E7387242069930056609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7386242069930056609D /* SceneDelegate.swift */; };
 		845E738B242069960056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845E738A242069960056609D /* Assets.xcassets */; };
@@ -123,6 +125,8 @@
 		845BB6452426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsUseCasesImp+Spec.swift"; sourceTree = "<group>"; };
 		845BB6482426360300A4F8C8 /* TeamsRealmRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsRealmRepositoryMock.swift; sourceTree = "<group>"; };
 		845BB64A2426361B00A4F8C8 /* TeamsWebServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsWebServiceMock.swift; sourceTree = "<group>"; };
+		845BB64C2426381700A4F8C8 /* TeamsRouterImp+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsRouterImp+Spec.swift"; sourceTree = "<group>"; };
+		845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 		845E7381242069930056609D /* overwatch_teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overwatch_teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E7384242069930056609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845E7386242069930056609D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 				84CF03722424E92000E859D2 /* TeamsViewModel+Spec.swift */,
 				84CF037C24250FA900E859D2 /* TeamsViewControllerImp+Spec.swift */,
 				84CF039324253AF500E859D2 /* TeamsPresenterImp+Spec.swift */,
+				845BB64C2426381700A4F8C8 /* TeamsRouterImp+Spec.swift */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				84CF03982425AA3C00E859D2 /* TeamsViewControllerSpy.swift */,
 				84CF039A2425AAAE00E859D2 /* TeamsUseCasesMock.swift */,
 				84CF039C2425AB1400E859D2 /* TeamsRouterSpy.swift */,
+				845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -798,10 +804,12 @@
 				84CF039B2425AAAE00E859D2 /* TeamsUseCasesMock.swift in Sources */,
 				84CF03A62425B77200E859D2 /* TeamDetailsViewControllerSpy.swift in Sources */,
 				84CF037D24250FA900E859D2 /* TeamsViewControllerImp+Spec.swift in Sources */,
+				845BB64F2426398600A4F8C8 /* NavigationControllerSpy.swift in Sources */,
 				84CF03A32425AD3000E859D2 /* TeamDetailsPresenterImp+Spec.swift in Sources */,
 				84CF038024252FDB00E859D2 /* TeamsViewSpy.swift in Sources */,
 				84CF039424253AF500E859D2 /* TeamsPresenterImp+Spec.swift in Sources */,
 				845BB6462426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift in Sources */,
+				845BB64D2426381700A4F8C8 /* TeamsRouterImp+Spec.swift in Sources */,
 				845BB64124261B5100A4F8C8 /* TeamDetailsViewSpy.swift in Sources */,
 				84CF03AD2425B90900E859D2 /* TeamDetailsViewControllerImp+Spec.swift in Sources */,
 				84CF039D2425AB1400E859D2 /* TeamsRouterSpy.swift in Sources */,
