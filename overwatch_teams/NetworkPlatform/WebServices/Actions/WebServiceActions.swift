@@ -1,0 +1,3 @@
+struct WebServiceActions {
+    private init() {}
+}
