@@ -4,7 +4,7 @@ protocol TeamsUseCases {
     func getTeams(completion: @escaping (Result<[TeamModel], DomainError>) -> Void)
 }
 
-final class TeamsUseCasesImp: TeamsUseCases {
+final class TeamsUseCasesImp {
     private let service: TeamsWebService
     private let repository: Repository
     
@@ -12,7 +12,11 @@ final class TeamsUseCasesImp: TeamsUseCases {
         self.service = service
         self.repository = repository
     }
-    
+}
+
+// MARK: - TeamsUseCases
+
+extension TeamsUseCasesImp: TeamsUseCases {
     func getTeams(completion: @escaping (Result<[TeamModel], DomainError>) -> Void) {
         let localModels = repository.get()
         
@@ -29,8 +33,7 @@ final class TeamsUseCasesImp: TeamsUseCases {
                 self.repository.save(domainModels: models)
                 completion(.success(models))
                 
-            case .failure(let error):
-                print(error)
+            case .failure:
                 completion(.failure(.domainUnkown))
             }
         }

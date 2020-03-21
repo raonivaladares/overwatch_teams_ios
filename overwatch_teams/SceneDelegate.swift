@@ -29,14 +29,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {}
 }
-
-//final class DependencyContainer {
-//    lazy var repository: Repository = {
-//        let realm = RealmFactory().createInstance()
-//        let repository = TeamsRealmRepository(realm: realm)
-//
-//        return repository
-//    }()
-//
-//    lazy var service: TeamsWebService = WebServiceFactory().createTeamsWebService()
-//}
