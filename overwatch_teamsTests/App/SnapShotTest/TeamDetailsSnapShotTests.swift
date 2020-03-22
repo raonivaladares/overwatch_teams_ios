@@ -24,9 +24,6 @@ class TeamDetailsSnapShotTests: XCTestCase {
         )
         
         viewController.configure(with: viewModel)
-
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe))
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe(.landscape)))
         
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8))
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8(.landscape)))

@@ -18,9 +18,6 @@ class TeamsSnapShotTests: XCTestCase {
         let viewModel = TeamsViewModel(viewState: .loading)
         
         viewController.configure(with: viewModel)
-
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe))
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe(.landscape)))
         
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8))
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8(.landscape)))
@@ -40,9 +37,6 @@ class TeamsSnapShotTests: XCTestCase {
         )
        
         viewController.configure(with: viewModel)
-
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe))
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe(.landscape)))
         
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8))
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8(.landscape)))
@@ -62,9 +56,6 @@ class TeamsSnapShotTests: XCTestCase {
         )
         
         viewController.configure(with: viewModel)
-
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe))
-        assertSnapshot(matching: viewController, as: .image(on: .iPhoneSe(.landscape)))
         
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8))
         assertSnapshot(matching: viewController, as: .image(on: .iPhone8(.landscape)))
