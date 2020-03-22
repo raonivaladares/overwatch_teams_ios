@@ -13,14 +13,11 @@ final class RealmFactory {
                 schemaVersion: 0
             )
             
-            let realm = try! Realm(configuration: configuration)
-            
-            try FileManager.default.setAttributes(
-            [FileAttributeKey.protectionKey: FileProtectionType.none],
-            ofItemAtPath: url.deletingLastPathComponent().path)
+            let realm = try Realm(configuration: configuration)
             
             return realm
-        } catch let error {
+            
+        } catch {
             deleteRealm()
             return createInstance()
         }
@@ -39,12 +36,14 @@ final class RealmFactory {
         }
 
         if !fileManager.fileExists(atPath: directory) {
-            try fileManager.createDirectory(atPath: directory,
-                                            withIntermediateDirectories: true,
-                                            attributes: nil)
+            try fileManager.createDirectory(
+                atPath: directory,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
         }
 
-        return URL(fileURLWithPath: "\(directory)/\(realmName)")
+        return .init(fileURLWithPath: "\(directory)/\(realmName)")
     }
     
     private func deleteRealm() {

@@ -26,7 +26,7 @@ final class TeamsPresenterImp {
                     DispatchQueue.main.async() {
                         viewController.configure(with: viewModel)
                     }
-            case .failure(let error):
+            case .failure:
                 if self.teamsModels.isEmpty {
                     let viewModel = TeamsViewModel(viewState: .showError(errorMessage: "Sorry, something went wrong! =("))
                     viewController.configure(with: viewModel)
