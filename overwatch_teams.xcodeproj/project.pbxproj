@@ -30,6 +30,7 @@
 		845D4F732427C761006E135C /* TeamLogoNetworkModel+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F722427C761006E135C /* TeamLogoNetworkModel+Main.swift */; };
 		845D4F772427C7DB006E135C /* TeamNetworkModel+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F762427C7DB006E135C /* TeamNetworkModel+Spec.swift */; };
 		845D4F7A2427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F792427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift */; };
+		845D4F7D2427D023006E135C /* TeamRealmEntity+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F7C2427D023006E135C /* TeamRealmEntity+Spec.swift */; };
 		845E7385242069930056609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7384242069930056609D /* AppDelegate.swift */; };
 		845E7387242069930056609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7386242069930056609D /* SceneDelegate.swift */; };
 		845E738B242069960056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845E738A242069960056609D /* Assets.xcassets */; };
@@ -158,6 +159,7 @@
 		845D4F722427C761006E135C /* TeamLogoNetworkModel+Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamLogoNetworkModel+Main.swift"; sourceTree = "<group>"; };
 		845D4F762427C7DB006E135C /* TeamNetworkModel+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamNetworkModel+Spec.swift"; sourceTree = "<group>"; };
 		845D4F792427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsServiceActionsFactoryImp.swift; sourceTree = "<group>"; };
+		845D4F7C2427D023006E135C /* TeamRealmEntity+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamRealmEntity+Spec.swift"; sourceTree = "<group>"; };
 		845E7381242069930056609D /* overwatch_teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overwatch_teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E7384242069930056609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845E7386242069930056609D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -334,6 +336,14 @@
 				845D4F762427C7DB006E135C /* TeamNetworkModel+Spec.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		845D4F7B2427CFB3006E135C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				845D4F7C2427D023006E135C /* TeamRealmEntity+Spec.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		845E7378242069930056609D = {
@@ -662,6 +672,7 @@
 		84CF03A12425ACDF00E859D2 /* DatabasePlataform */ = {
 			isa = PBXGroup;
 			children = (
+				845D4F7B2427CFB3006E135C /* Entities */,
 			);
 			path = DatabasePlataform;
 			sourceTree = "<group>";
@@ -889,6 +900,7 @@
 				84CF039424253AF500E859D2 /* TeamsPresenterImp+Spec.swift in Sources */,
 				845D4F682427BAE2006E135C /* URLRequestBuilder+Spec.swift in Sources */,
 				845BB6462426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift in Sources */,
+				845D4F7D2427D023006E135C /* TeamRealmEntity+Spec.swift in Sources */,
 				845BB64D2426381700A4F8C8 /* TeamsRouterImp+Spec.swift in Sources */,
 				845BB64124261B5100A4F8C8 /* TeamDetailsViewSpy.swift in Sources */,
 				84CF03AD2425B90900E859D2 /* TeamDetailsViewControllerImp+Spec.swift in Sources */,
