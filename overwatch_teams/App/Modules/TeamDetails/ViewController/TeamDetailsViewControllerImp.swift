@@ -8,7 +8,7 @@ final class TeamDetailsViewControllerImp: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
 
-        title = "Teams Details"
+        title = "Team Details"
     }
     
     required init?(coder: NSCoder) {

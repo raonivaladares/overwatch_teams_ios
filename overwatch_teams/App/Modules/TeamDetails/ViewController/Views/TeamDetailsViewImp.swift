@@ -93,23 +93,25 @@ extension TeamDetailsViewImp {
             $0.height.equalTo(300)
         }
 
+        let marginSpace = 20
+        
         nameLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImageView.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.top.equalTo(logoImageView.snp.bottom).offset(marginSpace)
+            $0.leading.equalToSuperview().offset(marginSpace)
+            $0.trailing.equalToSuperview().offset(-marginSpace)
         }
 
         abbreviatedNameLabel.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(6)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.leading.equalToSuperview().offset(marginSpace)
+            $0.trailing.equalToSuperview().offset(-marginSpace)
         }
 
         locationLabel.snp.makeConstraints {
             $0.top.equalTo(abbreviatedNameLabel.snp.bottom).offset(6)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.bottom.lessThanOrEqualToSuperview().offset(-20)
+            $0.leading.equalToSuperview().offset(marginSpace)
+            $0.trailing.equalToSuperview().offset(-marginSpace)
+            $0.bottom.lessThanOrEqualToSuperview().offset(-marginSpace)
         }
     }
 }

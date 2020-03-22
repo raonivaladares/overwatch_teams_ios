@@ -10,7 +10,7 @@ final class TeamDetailsViewControllerImpSpec: QuickSpec {
         
         describe(".init") {
             it("should have a title") {
-                expect(viewController.title).to(equal("Teams Details"))
+                expect(viewController.title).to(equal("Team Details"))
             }
         }
         

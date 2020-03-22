@@ -14,6 +14,8 @@
 		845BB64B2426361B00A4F8C8 /* TeamsWebServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64A2426361B00A4F8C8 /* TeamsWebServiceMock.swift */; };
 		845BB64D2426381700A4F8C8 /* TeamsRouterImp+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64C2426381700A4F8C8 /* TeamsRouterImp+Spec.swift */; };
 		845BB64F2426398600A4F8C8 /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */; };
+		845D4F5924278957006E135C /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F5824278957006E135C /* Robot.swift */; };
+		845D4F5B24278997006E135C /* TeamDetailsRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F5A24278997006E135C /* TeamDetailsRobot.swift */; };
 		845E7385242069930056609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7384242069930056609D /* AppDelegate.swift */; };
 		845E7387242069930056609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7386242069930056609D /* SceneDelegate.swift */; };
 		845E738B242069960056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845E738A242069960056609D /* Assets.xcassets */; };
@@ -127,6 +129,8 @@
 		845BB64A2426361B00A4F8C8 /* TeamsWebServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsWebServiceMock.swift; sourceTree = "<group>"; };
 		845BB64C2426381700A4F8C8 /* TeamsRouterImp+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsRouterImp+Spec.swift"; sourceTree = "<group>"; };
 		845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
+		845D4F5824278957006E135C /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
+		845D4F5A24278997006E135C /* TeamDetailsRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsRobot.swift; sourceTree = "<group>"; };
 		845E7381242069930056609D /* overwatch_teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overwatch_teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E7384242069930056609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845E7386242069930056609D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 			children = (
 				845E73A6242069960056609D /* overwatch_teamsUITests.swift */,
 				845E73A8242069960056609D /* Info.plist */,
+				845D4F5824278957006E135C /* Robot.swift */,
+				845D4F5A24278997006E135C /* TeamDetailsRobot.swift */,
 			);
 			path = overwatch_teamsUITests;
 			sourceTree = "<group>";
@@ -821,6 +827,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845D4F5B24278997006E135C /* TeamDetailsRobot.swift in Sources */,
+				845D4F5924278957006E135C /* Robot.swift in Sources */,
 				845E73A7242069960056609D /* overwatch_teamsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,6 +43,8 @@ final class TeamCell: UITableViewCell {
         
         addViewProperties()
         defineAndActivateConstraints()
+        
+        isAccessibilityElement = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,6 +65,8 @@ extension TeamCell {
         nameLabel.text = viewModel.name
         abbreviatedNameLabel.text = viewModel.abbreviatedName
         logoImageView.downloaded(from: viewModel.logoAddress, contentMode: .scaleAspectFit)
+        
+        accessibilityIdentifier = "teamCell\(viewModel.abbreviatedName)"
     }
 }
 

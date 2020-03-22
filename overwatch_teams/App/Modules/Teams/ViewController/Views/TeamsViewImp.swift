@@ -24,6 +24,9 @@ class TeamsViewImp: UIView {
         tableView.backgroundColor = .clear
         tableView.rowHeight = 140
         
+        tableView.isAccessibilityElement = true
+        tableView.accessibilityIdentifier = "teamsTableView"
+        
         return tableView
     }()
     
