@@ -16,6 +16,11 @@
 		845BB64F2426398600A4F8C8 /* NavigationControllerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */; };
 		845D4F5924278957006E135C /* Robot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F5824278957006E135C /* Robot.swift */; };
 		845D4F5B24278997006E135C /* TeamDetailsRobot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F5A24278997006E135C /* TeamDetailsRobot.swift */; };
+		845D4F5D24279252006E135C /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845D4F5C24279252006E135C /* SnapshotTesting.framework */; };
+		845D4F5E24279252006E135C /* SnapshotTesting.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 845D4F5C24279252006E135C /* SnapshotTesting.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		845D4F5F24279282006E135C /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845D4F5C24279252006E135C /* SnapshotTesting.framework */; };
+		845D4F62242792D8006E135C /* TeamDetailsSnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F61242792D8006E135C /* TeamDetailsSnapShotTests.swift */; };
+		845D4F642427B1B2006E135C /* TeamsSnapShotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F632427B1B2006E135C /* TeamsSnapShotTests.swift */; };
 		845E7385242069930056609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7384242069930056609D /* AppDelegate.swift */; };
 		845E7387242069930056609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7386242069930056609D /* SceneDelegate.swift */; };
 		845E738B242069960056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845E738A242069960056609D /* Assets.xcassets */; };
@@ -111,6 +116,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				84CF03662424074C00E859D2 /* RealmSwift.framework in Embed Frameworks */,
+				845D4F5E24279252006E135C /* SnapshotTesting.framework in Embed Frameworks */,
 				84CF03652424074600E859D2 /* Realm.framework in Embed Frameworks */,
 				845E73BB24206D320056609D /* SnapKit.framework in Embed Frameworks */,
 				84CF03792424EF4700E859D2 /* Quick.framework in Embed Frameworks */,
@@ -131,6 +137,9 @@
 		845BB64E2426398600A4F8C8 /* NavigationControllerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerSpy.swift; sourceTree = "<group>"; };
 		845D4F5824278957006E135C /* Robot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Robot.swift; sourceTree = "<group>"; };
 		845D4F5A24278997006E135C /* TeamDetailsRobot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsRobot.swift; sourceTree = "<group>"; };
+		845D4F5C24279252006E135C /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
+		845D4F61242792D8006E135C /* TeamDetailsSnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsSnapShotTests.swift; sourceTree = "<group>"; };
+		845D4F632427B1B2006E135C /* TeamsSnapShotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsSnapShotTests.swift; sourceTree = "<group>"; };
 		845E7381242069930056609D /* overwatch_teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overwatch_teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E7384242069930056609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845E7386242069930056609D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 				84CF03632423EF8600E859D2 /* RealmSwift.framework in Frameworks */,
 				84CF03642423EF8600E859D2 /* Realm.framework in Frameworks */,
 				845E73BA24206D320056609D /* SnapKit.framework in Frameworks */,
+				845D4F5D24279252006E135C /* SnapshotTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845D4F5F24279282006E135C /* SnapshotTesting.framework in Frameworks */,
 				84CF037A2424F95000E859D2 /* Nimble.framework in Frameworks */,
 				84CF037B2424F95000E859D2 /* Quick.framework in Frameworks */,
 			);
@@ -277,6 +288,15 @@
 				845BB64A2426361B00A4F8C8 /* TeamsWebServiceMock.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		845D4F60242792AB006E135C /* SnapShotTest */ = {
+			isa = PBXGroup;
+			children = (
+				845D4F61242792D8006E135C /* TeamDetailsSnapShotTests.swift */,
+				845D4F632427B1B2006E135C /* TeamsSnapShotTests.swift */,
+			);
+			path = SnapShotTest;
 			sourceTree = "<group>";
 		};
 		845E7378242069930056609D = {
@@ -341,10 +361,10 @@
 		845E73A5242069960056609D /* overwatch_teamsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				845E73A6242069960056609D /* overwatch_teamsUITests.swift */,
-				845E73A8242069960056609D /* Info.plist */,
 				845D4F5824278957006E135C /* Robot.swift */,
 				845D4F5A24278997006E135C /* TeamDetailsRobot.swift */,
+				845E73A6242069960056609D /* overwatch_teamsUITests.swift */,
+				845E73A8242069960056609D /* Info.plist */,
 			);
 			path = overwatch_teamsUITests;
 			sourceTree = "<group>";
@@ -361,6 +381,7 @@
 		845E73B824206D310056609D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				845D4F5C24279252006E135C /* SnapshotTesting.framework */,
 				84CF03742424EF4700E859D2 /* Nimble.framework */,
 				84CF03752424EF4700E859D2 /* Quick.framework */,
 				84CF03622423EF8600E859D2 /* Realm.framework */,
@@ -490,6 +511,7 @@
 		84CF03702424E83500E859D2 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				845D4F60242792AB006E135C /* SnapShotTest */,
 				845BB64424261F9B00A4F8C8 /* Modules */,
 			);
 			path = App;
@@ -810,6 +832,7 @@
 				84CF039B2425AAAE00E859D2 /* TeamsUseCasesMock.swift in Sources */,
 				84CF03A62425B77200E859D2 /* TeamDetailsViewControllerSpy.swift in Sources */,
 				84CF037D24250FA900E859D2 /* TeamsViewControllerImp+Spec.swift in Sources */,
+				845D4F62242792D8006E135C /* TeamDetailsSnapShotTests.swift in Sources */,
 				845BB64F2426398600A4F8C8 /* NavigationControllerSpy.swift in Sources */,
 				84CF03A32425AD3000E859D2 /* TeamDetailsPresenterImp+Spec.swift in Sources */,
 				84CF038024252FDB00E859D2 /* TeamsViewSpy.swift in Sources */,
@@ -819,6 +842,7 @@
 				845BB64124261B5100A4F8C8 /* TeamDetailsViewSpy.swift in Sources */,
 				84CF03AD2425B90900E859D2 /* TeamDetailsViewControllerImp+Spec.swift in Sources */,
 				84CF039D2425AB1400E859D2 /* TeamsRouterSpy.swift in Sources */,
+				845D4F642427B1B2006E135C /* TeamsSnapShotTests.swift in Sources */,
 				845E739C242069960056609D /* overwatch_teamsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

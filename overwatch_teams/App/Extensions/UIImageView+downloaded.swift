@@ -2,6 +2,7 @@ import UIKit
 
 // https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift
 // https://medium.com/journey-of-one-thousand-apps/caching-images-in-swift-e909a8e5db17
+
 extension UIImageView {
     static let imageCache = NSCache<NSString, UIImage>()
     
