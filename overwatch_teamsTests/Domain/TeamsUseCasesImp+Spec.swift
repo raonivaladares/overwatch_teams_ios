@@ -41,7 +41,7 @@ final class TeamsUseCasesImpSpec: QuickSpec {
             var failureCompletionInvovation: Int!
             var finishedCompletionInvovation: Int!
             
-            var subscriptions = Set<AnyCancellable>()
+            var subscriptions: Set<AnyCancellable>!
             
             context("when a request has success and hasn't cache") {
                 beforeEach {
@@ -51,6 +51,8 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
                     finishedCompletionInvovation = 0
+                    
+                    subscriptions = Set<AnyCancellable>()
                     
                     useCases.getTeams()
                         .sink(receiveCompletion: { completion in
@@ -99,6 +101,9 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
                     finishedCompletionInvovation = 0
+                    
+                    subscriptions = Set<AnyCancellable>()
+                    
                     useCases.getTeams()
                         .sink(receiveCompletion: { completion in
                             switch completion {
@@ -147,6 +152,8 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                     failureCompletionInvovation = 0
                     finishedCompletionInvovation = 0
                     
+                    subscriptions = Set<AnyCancellable>()
+                    
                     useCases.getTeams()
                         .sink(receiveCompletion: { completion in
                             switch completion {
@@ -194,6 +201,8 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
                     finishedCompletionInvovation = 0
+                    
+                    subscriptions = Set<AnyCancellable>()
                     
                     useCases.getTeams()
                         .sink(receiveCompletion: { completion in

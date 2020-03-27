@@ -1,8 +1,9 @@
 import Foundation
+import Combine
 
 @testable import overwatch_teams
 
-final class TeamsWebServiceMock: TeamsWebService {
+final class TeamsWebServiceMock {
     enum ExpectedResult {
         case success(teams: [TeamNetworkModel])
         case failure(error: NetworkPlataformError)
@@ -10,19 +11,32 @@ final class TeamsWebServiceMock: TeamsWebService {
     
     var expectedResult: ExpectedResult?
     var getTeamsInvocations = 0
-    
-    func getTeams(completion: @escaping (Result<[TeamNetworkModel], NetworkPlataformError>) -> Void) {
+}
+
+extension TeamsWebServiceMock: TeamsWebService {
+   func getTeams() -> AnyPublisher<[TeamNetworkModel], NetworkPlataformError> {
         getTeamsInvocations += 1
         
-        guard let expectedResult = expectedResult else { return }
+        let passthroughSubject = PassthroughSubject<[TeamNetworkModel], NetworkPlataformError>()
+        
+        guard let expectedResult = expectedResult else {
+            passthroughSubject.send(completion: .finished)
+            
+            return passthroughSubject
+                .eraseToAnyPublisher()
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             switch expectedResult {
             case .success(let teams):
-                completion(.success(teams))
+                passthroughSubject.send(teams)
+                passthroughSubject.send(completion: .finished)
             case .failure(let error):
-                completion(.failure(error))
+                passthroughSubject.send(completion: .failure(error))
             }
         }
+    
+        return passthroughSubject
+            .eraseToAnyPublisher()
     }
 }

@@ -36,17 +36,17 @@ extension TeamsUseCasesMock: TeamsUseCases {
         
         switch expectedResult {
         case .successWithoutCache:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send([self.model]) }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { passthroughSubject.send(completion: .finished) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { passthroughSubject.send(completion: .finished) }
         case .successWithCache:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send([self.model]) }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { passthroughSubject.send([self.model]) }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { passthroughSubject.send(completion: .finished) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) { passthroughSubject.send(completion: .finished) }
         case .failureWithoutCache:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send(completion: .failure(.domainUnkown)) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { passthroughSubject.send(completion: .failure(.domainUnkown)) }
         case .failureWithCache:
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send([self.model]) }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send(completion: .failure(.domainUnkown)) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) { passthroughSubject.send(completion: .failure(.domainUnkown)) }
         }
         
         

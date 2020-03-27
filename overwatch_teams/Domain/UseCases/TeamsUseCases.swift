@@ -19,33 +19,25 @@ final class TeamsUseCasesImp {
 
 extension TeamsUseCasesImp: TeamsUseCases {
     func getTeams() -> AnyPublisher<[TeamModel], DomainError> {
-        let future = Future<[TeamModel], DomainError> { [weak self] promise in
-            self?.service.getTeams() { [weak self] result in
-                guard let self = self else {
-                    promise(.failure(.domainUnkown))
-                    return
-                }
-
-                switch result {
-                case .success(let teamsNetworkModel):
-                    let models = teamsNetworkModel.map { $0.asDomain() }
-                    self.repository.save(domainModels: models)
-                    promise(.success(models))
-                case .failure:
-                    promise(.failure(.domainUnkown))
-                }
+        var publisher: AnyPublisher<[TeamModel], DomainError>  = service.getTeams()
+            .map { [weak self] networkModels in
+                let models = networkModels.map { $0.asDomain() }
+                self?.repository.save(domainModels: models)
+                
+                return models
             }
-        }
+            .mapError { _ in .domainUnkown }
+            .eraseToAnyPublisher()
+        
         
         let localModels = repository.get()
         
         if !localModels.isEmpty {
-            return future
+            publisher = publisher
                 .prepend(localModels)
                 .eraseToAnyPublisher()
         }
         
-        return future
-            .eraseToAnyPublisher()
+        return publisher
     }
 }

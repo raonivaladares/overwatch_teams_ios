@@ -123,7 +123,7 @@ final class TeamsPresenterImpSpec: QuickSpec {
                     )
                 }
                 
-                fit("calls configure two times: .loading + .showContent") {
+                it("calls configure two times: .loading + .showContent") {
                     expect(viewControllerSpy.configureInvocations).toEventually(equal(2))
                 }
                 
@@ -149,7 +149,9 @@ final class TeamsPresenterImpSpec: QuickSpec {
                     router: routerSpy
                 )
                 
-                presenter.eventHandler(event: .elementSelected(rowIndex: 0))
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    presenter.eventHandler(event: .elementSelected(rowIndex: 0))
+                }
             }
             
             it("calls teamSelected once") {
