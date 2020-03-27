@@ -31,6 +31,8 @@
 		845D4F772427C7DB006E135C /* TeamNetworkModel+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F762427C7DB006E135C /* TeamNetworkModel+Spec.swift */; };
 		845D4F7A2427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F792427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift */; };
 		845D4F7D2427D023006E135C /* TeamRealmEntity+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F7C2427D023006E135C /* TeamRealmEntity+Spec.swift */; };
+		845D4F81242807C2006E135C /* WebServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F80242807C2006E135C /* WebServiceFactory.swift */; };
+		845D4F83242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845D4F82242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift */; };
 		845E7385242069930056609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7384242069930056609D /* AppDelegate.swift */; };
 		845E7387242069930056609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E7386242069930056609D /* SceneDelegate.swift */; };
 		845E738B242069960056609D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845E738A242069960056609D /* Assets.xcassets */; };
@@ -160,6 +162,8 @@
 		845D4F762427C7DB006E135C /* TeamNetworkModel+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamNetworkModel+Spec.swift"; sourceTree = "<group>"; };
 		845D4F792427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsServiceActionsFactoryImp.swift; sourceTree = "<group>"; };
 		845D4F7C2427D023006E135C /* TeamRealmEntity+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamRealmEntity+Spec.swift"; sourceTree = "<group>"; };
+		845D4F80242807C2006E135C /* WebServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceFactory.swift; sourceTree = "<group>"; };
+		845D4F82242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverwatchLeagueWebServiceConfiguration.swift; sourceTree = "<group>"; };
 		845E7381242069930056609D /* overwatch_teams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = overwatch_teams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845E7384242069930056609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		845E7386242069930056609D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -525,6 +529,8 @@
 				84CF035C2423AAAE00E859D2 /* Errors */,
 				84CF03572423A49200E859D2 /* Actions */,
 				84CF035D2423AAEF00E859D2 /* TeamsWebService.swift */,
+				845D4F80242807C2006E135C /* WebServiceFactory.swift */,
+				845D4F82242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				845D4F6F2427C68C006E135C /* TeamNetworkModel.swift in Sources */,
 				84CF036A2424099300E859D2 /* Repository.swift in Sources */,
 				84CF039224253A6F00E859D2 /* TeamsPresenterEvent.swift in Sources */,
+				845D4F81242807C2006E135C /* WebServiceFactory.swift in Sources */,
 				84CF036D2424C4D200E859D2 /* TeamRealmEntity.swift in Sources */,
 				84CF03A82425B83500E859D2 /* TeamDetailsViewModel.swift in Sources */,
 				84CF03AB2425B86E00E859D2 /* TeamDetailsViewController.swift in Sources */,
@@ -856,6 +863,7 @@
 				84CF034B2422D84F00E859D2 /* NetworkPlataformErrorParser.swift in Sources */,
 				84CF03252420D54600E859D2 /* TeamsViewControllerImp.swift in Sources */,
 				84CF034F2422D8E400E859D2 /* URLRequestBuilder.swift in Sources */,
+				845D4F83242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift in Sources */,
 				84CF034D2422D87700E859D2 /* URLResponseErrorParser.swift in Sources */,
 				84CF0336242264ED00E859D2 /* TeamsRouterImp.swift in Sources */,
 				845D4F732427C761006E135C /* TeamLogoNetworkModel+Main.swift in Sources */,

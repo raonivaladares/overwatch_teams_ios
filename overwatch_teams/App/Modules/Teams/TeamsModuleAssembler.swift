@@ -23,23 +23,3 @@ final class TeamsModuleAssembler {
         return viewController
     }
 }
-
-
-final class WebServiceFactory {
-    func createTeamsWebService() -> TeamsWebService {
-        let configuration = OverwatchLeagueWebServiceConfiguration()
-        let requestExecuter = RequestExecuterImp(urlSession: URLSession.shared)
-        let webService = TeamsWebServiceImp(
-            actions: TeamsServiceActionsFactoryImp(),
-            configuration: configuration,
-            requestExecuter: requestExecuter
-        )
-        
-        return webService
-    }
-}
-
-struct OverwatchLeagueWebServiceConfiguration: WebServiceConfiguration {
-    let scheme = "https"
-    let host = "api.overwatchleague.com"
-}

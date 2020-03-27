@@ -1,7 +1,8 @@
 import Foundation
+import Combine
 
 protocol TeamsUseCases {
-    func getTeams(completion: @escaping (Result<[TeamModel], DomainError>) -> Void)
+    func getTeams() -> AnyPublisher<[TeamModel], DomainError>
 }
 
 final class TeamsUseCasesImp {
@@ -17,25 +18,34 @@ final class TeamsUseCasesImp {
 // MARK: - TeamsUseCases
 
 extension TeamsUseCasesImp: TeamsUseCases {
-    func getTeams(completion: @escaping (Result<[TeamModel], DomainError>) -> Void) {
+    func getTeams() -> AnyPublisher<[TeamModel], DomainError> {
+        let future = Future<[TeamModel], DomainError> { [weak self] promise in
+            self?.service.getTeams() { [weak self] result in
+                guard let self = self else {
+                    promise(.failure(.domainUnkown))
+                    return
+                }
+
+                switch result {
+                case .success(let teamsNetworkModel):
+                    let models = teamsNetworkModel.map { $0.asDomain() }
+                    self.repository.save(domainModels: models)
+                    promise(.success(models))
+                case .failure:
+                    promise(.failure(.domainUnkown))
+                }
+            }
+        }
+        
         let localModels = repository.get()
         
         if !localModels.isEmpty {
-            completion(.success(localModels))
+            return future
+                .prepend(localModels)
+                .eraseToAnyPublisher()
         }
         
-        service.getTeams() { [weak self] result in
-            guard let self = self else { return }
-
-            switch result {
-            case .success(let teamsNetworkModel):
-                let models = teamsNetworkModel.map { $0.asDomain() }
-                self.repository.save(domainModels: models)
-                completion(.success(models))
-                
-            case .failure:
-                completion(.failure(.domainUnkown))
-            }
-        }
+        return future
+            .eraseToAnyPublisher()
     }
 }

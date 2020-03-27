@@ -3,8 +3,8 @@ import SnapshotTesting
 
 @testable import overwatch_teams
 
+//Snapshot tests should run on a iPhone 8.
 class TeamsSnapShotTests: XCTestCase {
-
     override func setUp() {
         
         let image = UIImage(named: "fakeDalasLogo")!

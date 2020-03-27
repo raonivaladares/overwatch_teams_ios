@@ -123,8 +123,8 @@ final class TeamsPresenterImpSpec: QuickSpec {
                     )
                 }
                 
-                it("calls configure three times: .loading + .showContent + .showError") {
-                    expect(viewControllerSpy.configureInvocations).toEventually(equal(3))
+                fit("calls configure two times: .loading + .showContent") {
+                    expect(viewControllerSpy.configureInvocations).toEventually(equal(2))
                 }
                 
                 it("calls getTeams only once") {

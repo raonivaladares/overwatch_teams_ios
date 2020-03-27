@@ -3,6 +3,7 @@ import SnapshotTesting
 
 @testable import overwatch_teams
 
+//Snapshot tests should run on a iPhone 8.
 class TeamDetailsSnapShotTests: XCTestCase {
 
     override func setUp() {

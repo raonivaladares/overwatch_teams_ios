@@ -1,3 +1,6 @@
+import Foundation
+import Combine
+
 @testable import overwatch_teams
 
 final class TeamsUseCasesMock {
@@ -20,6 +23,37 @@ final class TeamsUseCasesMock {
 }
 
 extension TeamsUseCasesMock: TeamsUseCases {
+    func getTeams() -> AnyPublisher<[TeamModel], DomainError> {
+        getTeamsInvocations += 1
+        let passthroughSubject = PassthroughSubject<[TeamModel], DomainError>()
+        
+        guard let expectedResult = expectedResult else {
+            passthroughSubject.send(completion: .finished)
+            return passthroughSubject
+                .eraseToAnyPublisher()
+        }
+        
+        
+        switch expectedResult {
+        case .successWithoutCache:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { passthroughSubject.send(completion: .finished) }
+        case .successWithCache:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) { passthroughSubject.send(completion: .finished) }
+        case .failureWithoutCache:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send(completion: .failure(.domainUnkown)) }
+        case .failureWithCache:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send([self.model]) }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { passthroughSubject.send(completion: .failure(.domainUnkown)) }
+        }
+        
+        
+        return passthroughSubject
+            .eraseToAnyPublisher()
+    }
+    
     func getTeams(completion: @escaping (Result<[TeamModel], DomainError>) -> Void) {
         getTeamsInvocations += 1
         

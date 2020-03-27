@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+import Combine
 
 @testable import overwatch_teams
 
@@ -38,22 +39,31 @@ final class TeamsUseCasesImpSpec: QuickSpec {
             )
             var successCompletionInvovation: Int!
             var failureCompletionInvovation: Int!
+            var finishedCompletionInvovation: Int!
+            
+            var subscriptions = Set<AnyCancellable>()
             
             context("when a request has success and hasn't cache") {
                 beforeEach {
                     webServiceMock.expectedResult = .success(teams: [networkModel])
                     repositoryMock.expectedResult = []
+                    
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
+                    finishedCompletionInvovation = 0
                     
-                    useCases.getTeams() { result in
-                        switch result {
-                        case .success:
+                    useCases.getTeams()
+                        .sink(receiveCompletion: { completion in
+                            switch completion {
+                            case .failure:
+                                failureCompletionInvovation += 1
+                            case .finished:
+                                finishedCompletionInvovation += 1
+                            }
+                        }, receiveValue: { models in
                             successCompletionInvovation += 1
-                        case .failure:
-                            failureCompletionInvovation += 1
-                        }
-                    }
+                        })
+                        .store(in: &subscriptions)
                 }
                 
                 it("should try to get cache before request") {
@@ -65,7 +75,7 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                 }
                 
                 it("should save model after a request with success") {
-                    expect(repositoryMock.saveInvocations).to(equal(1))
+                    expect(repositoryMock.saveInvocations).toEventually(equal(1))
                 }
                 
                 it("should call completion with success") {
@@ -75,23 +85,32 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                 it("should not call completion with failure") {
                     expect(failureCompletionInvovation).toEventually(equal(0))
                 }
+                
+                it("should call .finshed to end streaming") {
+                    expect(finishedCompletionInvovation).toEventually(equal(1))
+                }
             }
             
             context("when a request has success and has cache") {
                 beforeEach {
                     webServiceMock.expectedResult = .success(teams: [networkModel])
                     repositoryMock.expectedResult = [networkModel.asDomain()]
+                    
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
-                    
-                    useCases.getTeams() { result in
-                        switch result {
-                        case .success:
+                    finishedCompletionInvovation = 0
+                    useCases.getTeams()
+                        .sink(receiveCompletion: { completion in
+                            switch completion {
+                            case .failure:
+                                failureCompletionInvovation += 1
+                            case .finished:
+                                finishedCompletionInvovation += 1
+                            }
+                        }, receiveValue: { models in
                             successCompletionInvovation += 1
-                        case .failure:
-                            failureCompletionInvovation += 1
-                        }
-                    }
+                        })
+                        .store(in: &subscriptions)
                 }
                 
                 it("should try to get cache before request") {
@@ -103,7 +122,7 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                 }
                 
                 it("should save model after a request with success") {
-                    expect(repositoryMock.saveInvocations).to(equal(1))
+                    expect(repositoryMock.saveInvocations).toEventually(equal(1))
                 }
                 
                 it("should call completion with success twice") {
@@ -113,23 +132,33 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                 it("should not call completion with failure") {
                     expect(failureCompletionInvovation).toEventually(equal(0))
                 }
+                
+                it("should call .finshed to end streaming") {
+                    expect(finishedCompletionInvovation).toEventually((equal(1)))
+                }
             }
             
             context("when a request has fail and hasn't cache") {
                 beforeEach {
                     webServiceMock.expectedResult = .failure(error: .unkown)
                     repositoryMock.expectedResult = []
+                    
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
+                    finishedCompletionInvovation = 0
                     
-                    useCases.getTeams() { result in
-                        switch result {
-                        case .success:
+                    useCases.getTeams()
+                        .sink(receiveCompletion: { completion in
+                            switch completion {
+                            case .failure:
+                                failureCompletionInvovation += 1
+                            case .finished:
+                                finishedCompletionInvovation += 1
+                            }
+                        }, receiveValue: { models in
                             successCompletionInvovation += 1
-                        case .failure:
-                            failureCompletionInvovation += 1
-                        }
-                    }
+                        })
+                        .store(in: &subscriptions)
                 }
                 
                 it("should try to get cache before request") {
@@ -151,23 +180,33 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                 it("should call completion with failure") {
                     expect(failureCompletionInvovation).toEventually(equal(1))
                 }
+                
+                it("should call .finshed to end streaming") {
+                    expect(finishedCompletionInvovation).toEventually(equal(0))
+                }
             }
             
             context("when a request has fail and has cache") {
                 beforeEach {
                     webServiceMock.expectedResult = .failure(error: .unkown)
                     repositoryMock.expectedResult = [networkModel.asDomain()]
+                    
                     successCompletionInvovation = 0
                     failureCompletionInvovation = 0
+                    finishedCompletionInvovation = 0
                     
-                    useCases.getTeams() { result in
-                        switch result {
-                        case .success:
+                    useCases.getTeams()
+                        .sink(receiveCompletion: { completion in
+                            switch completion {
+                            case .failure:
+                                failureCompletionInvovation += 1
+                            case .finished:
+                                finishedCompletionInvovation += 1
+                            }
+                        }, receiveValue: { models in
                             successCompletionInvovation += 1
-                        case .failure:
-                            failureCompletionInvovation += 1
-                        }
-                    }
+                        })
+                        .store(in: &subscriptions)
                 }
                 
                 it("should try to get cache before request") {
@@ -188,6 +227,10 @@ final class TeamsUseCasesImpSpec: QuickSpec {
                 
                 it("should call completion with failure") {
                     expect(failureCompletionInvovation).toEventually(equal(1))
+                }
+                
+                it("should call .finshed to end streaming") {
+                    expect(finishedCompletionInvovation).toEventually(equal(0))
                 }
             }
         }

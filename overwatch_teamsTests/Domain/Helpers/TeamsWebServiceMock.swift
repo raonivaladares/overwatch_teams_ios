@@ -1,3 +1,5 @@
+import Foundation
+
 @testable import overwatch_teams
 
 final class TeamsWebServiceMock: TeamsWebService {
@@ -14,11 +16,13 @@ final class TeamsWebServiceMock: TeamsWebService {
         
         guard let expectedResult = expectedResult else { return }
         
-        switch expectedResult {
-        case .success(let teams):
-            completion(.success(teams))
-        case .failure(let error):
-            completion(.failure(error))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            switch expectedResult {
+            case .success(let teams):
+                completion(.success(teams))
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }
