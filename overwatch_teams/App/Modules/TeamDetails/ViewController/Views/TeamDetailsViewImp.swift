@@ -6,7 +6,7 @@ final class TeamDetailsViewImp: UIView {
     
     private let logoImageView: UIImageView = {
         let coverImageView = UIImageView()
-        coverImageView.backgroundColor = AppColors.imagePlaceHolder
+        coverImageView.backgroundColor = AppColors.Components.imagePlaceHolder
         coverImageView.contentMode = .scaleAspectFit
 
         return coverImageView
@@ -14,7 +14,7 @@ final class TeamDetailsViewImp: UIView {
 
     private let nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AppColors.labelText
+        label.textColor = AppColors.Components.labelText
         label.font = .systemFont(ofSize: 25)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -24,7 +24,7 @@ final class TeamDetailsViewImp: UIView {
 
     private let abbreviatedNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AppColors.labelText
+        label.textColor = AppColors.Components.labelText
         label.font = .systemFont(ofSize: 21)
         label.textAlignment = .center
 
@@ -33,7 +33,7 @@ final class TeamDetailsViewImp: UIView {
 
     private let locationLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AppColors.labelText
+        label.textColor = AppColors.Components.labelText
         label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
 
@@ -43,7 +43,7 @@ final class TeamDetailsViewImp: UIView {
     convenience init() {
         self.init(frame: .zero)
         
-        backgroundColor = AppColors.viewBackground
+        backgroundColor = AppColors.Components.viewBackground
         
         addViews()
         defineAndActivateConstraints()

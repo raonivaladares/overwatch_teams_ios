@@ -4,7 +4,7 @@ import SnapKit
 class TeamsViewImp: UIView {
     private let activityIndication: UIActivityIndicatorView = {
         let activityIndication = UIActivityIndicatorView()
-        activityIndication.color = AppColors.loader
+        activityIndication.color = AppColors.Components.loader
         activityIndication.transform = CGAffineTransform(scaleX: 2, y: 2)
         
         return activityIndication
@@ -12,7 +12,7 @@ class TeamsViewImp: UIView {
     
     private let errorMessageLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AppColors.labelText
+        label.textColor = AppColors.Components.labelText
         label.font = .systemFont(ofSize: 21)
         label.textAlignment = .center
 
@@ -37,7 +37,7 @@ class TeamsViewImp: UIView {
     convenience init() {
         self.init(frame: .zero)
         
-        backgroundColor = AppColors.viewBackground
+        backgroundColor = AppColors.Components.viewBackground
         
         addViews()
         defineAndActivateConstraints()

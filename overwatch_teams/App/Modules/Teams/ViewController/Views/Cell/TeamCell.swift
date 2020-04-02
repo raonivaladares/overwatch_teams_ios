@@ -3,7 +3,7 @@ import UIKit
 final class TeamCell: UITableViewCell {
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = AppColors.imagePlaceHolder
+        imageView.backgroundColor = AppColors.Components.imagePlaceHolder
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -22,7 +22,7 @@ final class TeamCell: UITableViewCell {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        label.textColor = AppColors.labelText
+        label.textColor = AppColors.Components.labelText
         label.font = UIFont.systemFont(ofSize: 20)
         
         return label
@@ -30,7 +30,7 @@ final class TeamCell: UITableViewCell {
     
     private let abbreviatedNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = AppColors.labelText
+        label.textColor = AppColors.Components.labelText
         label.font = UIFont.systemFont(ofSize: 15)
         
         return label
@@ -39,7 +39,7 @@ final class TeamCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = AppColors.cellBackground
+        backgroundColor = AppColors.Components.cellBackground
         
         addViewProperties()
         defineAndActivateConstraints()

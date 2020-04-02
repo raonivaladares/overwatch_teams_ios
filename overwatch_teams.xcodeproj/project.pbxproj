@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84583A392431847B00DF32B0 /* RequestExecuter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84583A382431847B00DF32B0 /* RequestExecuter.swift */; };
+		84583A41243185AB00DF32B0 /* TeamsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84583A40243185AB00DF32B0 /* TeamsWebService.swift */; };
+		84583A4524318A6800DF32B0 /* WebServiceActions+Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84583A4424318A6800DF32B0 /* WebServiceActions+Teams.swift */; };
 		845BB63F2426156000A4F8C8 /* TeamDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB63E2426156000A4F8C8 /* TeamDetailsView.swift */; };
 		845BB64124261B5100A4F8C8 /* TeamDetailsViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB64024261B5100A4F8C8 /* TeamDetailsViewSpy.swift */; };
 		845BB6462426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BB6452426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift */; };
@@ -67,7 +70,7 @@
 		84CF03552422F95100E859D2 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF03542422F95100E859D2 /* HTTPMethod.swift */; };
 		84CF03592423A4A200E859D2 /* WebServiceActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF03582423A4A100E859D2 /* WebServiceActions.swift */; };
 		84CF035B2423A8DB00E859D2 /* TeamsServiceActionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF035A2423A8DB00E859D2 /* TeamsServiceActionsFactory.swift */; };
-		84CF035E2423AAEF00E859D2 /* TeamsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF035D2423AAEF00E859D2 /* TeamsWebService.swift */; };
+		84CF035E2423AAEF00E859D2 /* TeamsWebServiceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF035D2423AAEF00E859D2 /* TeamsWebServiceImp.swift */; };
 		84CF03602423E02D00E859D2 /* RealmFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF035F2423E02D00E859D2 /* RealmFactory.swift */; };
 		84CF03632423EF8600E859D2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CF03612423EF8600E859D2 /* RealmSwift.framework */; };
 		84CF03642423EF8600E859D2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CF03622423EF8600E859D2 /* Realm.framework */; };
@@ -140,6 +143,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84583A382431847B00DF32B0 /* RequestExecuter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExecuter.swift; sourceTree = "<group>"; };
+		84583A40243185AB00DF32B0 /* TeamsWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsWebService.swift; sourceTree = "<group>"; };
+		84583A4424318A6800DF32B0 /* WebServiceActions+Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceActions+Teams.swift"; sourceTree = "<group>"; };
 		845BB63E2426156000A4F8C8 /* TeamDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsView.swift; sourceTree = "<group>"; };
 		845BB64024261B5100A4F8C8 /* TeamDetailsViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewSpy.swift; sourceTree = "<group>"; };
 		845BB6452426213B00A4F8C8 /* TeamsUseCasesImp+Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamsUseCasesImp+Spec.swift"; sourceTree = "<group>"; };
@@ -203,7 +209,7 @@
 		84CF03542422F95100E859D2 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		84CF03582423A4A100E859D2 /* WebServiceActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceActions.swift; sourceTree = "<group>"; };
 		84CF035A2423A8DB00E859D2 /* TeamsServiceActionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsServiceActionsFactory.swift; sourceTree = "<group>"; };
-		84CF035D2423AAEF00E859D2 /* TeamsWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsWebService.swift; sourceTree = "<group>"; };
+		84CF035D2423AAEF00E859D2 /* TeamsWebServiceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsWebServiceImp.swift; sourceTree = "<group>"; };
 		84CF035F2423E02D00E859D2 /* RealmFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFactory.swift; sourceTree = "<group>"; };
 		84CF03612423EF8600E859D2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		84CF03622423EF8600E859D2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -267,6 +273,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84583A372431846B00DF32B0 /* RequestExecuter */ = {
+			isa = PBXGroup;
+			children = (
+				84583A382431847B00DF32B0 /* RequestExecuter.swift */,
+				84CF03462422D51900E859D2 /* RequestExecuterImp.swift */,
+			);
+			path = RequestExecuter;
+			sourceTree = "<group>";
+		};
+		84583A3F2431858F00DF32B0 /* TeamsWebService */ = {
+			isa = PBXGroup;
+			children = (
+				84583A4324318A2F00DF32B0 /* Actions */,
+				845D4F6B2427C661006E135C /* Models */,
+				84CF035D2423AAEF00E859D2 /* TeamsWebServiceImp.swift */,
+				84583A40243185AB00DF32B0 /* TeamsWebService.swift */,
+			);
+			path = TeamsWebService;
+			sourceTree = "<group>";
+		};
+		84583A4324318A2F00DF32B0 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				84CF035A2423A8DB00E859D2 /* TeamsServiceActionsFactory.swift */,
+				845D4F792427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift */,
+				84583A4424318A6800DF32B0 /* WebServiceActions+Teams.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		845BB63D242614F500A4F8C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,10 +519,9 @@
 		84CF033E2422CCC600E859D2 /* NetworkPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				84583A372431846B00DF32B0 /* RequestExecuter */,
 				84CF03562423A47600E859D2 /* WebServices */,
-				84CF03462422D51900E859D2 /* RequestExecuterImp.swift */,
 				84CF034E2422D8E400E859D2 /* URLRequestBuilder.swift */,
-				84CF03502422F92000E859D2 /* WebServiceAction.swift */,
 				84CF03522422F93A00E859D2 /* WebServiceConfiguration.swift */,
 				84CF03542422F95100E859D2 /* HTTPMethod.swift */,
 			);
@@ -525,11 +560,10 @@
 		84CF03562423A47600E859D2 /* WebServices */ = {
 			isa = PBXGroup;
 			children = (
-				845D4F6B2427C661006E135C /* Models */,
+				845D4F80242807C2006E135C /* WebServiceFactory.swift */,
+				84583A3F2431858F00DF32B0 /* TeamsWebService */,
 				84CF035C2423AAAE00E859D2 /* Errors */,
 				84CF03572423A49200E859D2 /* Actions */,
-				84CF035D2423AAEF00E859D2 /* TeamsWebService.swift */,
-				845D4F80242807C2006E135C /* WebServiceFactory.swift */,
 				845D4F82242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift */,
 			);
 			path = WebServices;
@@ -538,9 +572,8 @@
 		84CF03572423A49200E859D2 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				84CF03502422F92000E859D2 /* WebServiceAction.swift */,
 				84CF03582423A4A100E859D2 /* WebServiceActions.swift */,
-				84CF035A2423A8DB00E859D2 /* TeamsServiceActionsFactory.swift */,
-				845D4F792427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -838,13 +871,14 @@
 				845E7385242069930056609D /* AppDelegate.swift in Sources */,
 				845E7387242069930056609D /* SceneDelegate.swift in Sources */,
 				84CF033D2422CC7400E859D2 /* TeamModel.swift in Sources */,
-				84CF035E2423AAEF00E859D2 /* TeamsWebService.swift in Sources */,
+				84CF035E2423AAEF00E859D2 /* TeamsWebServiceImp.swift in Sources */,
 				84CF03382422696100E859D2 /* TeamDetailsPresenter.swift in Sources */,
 				84CF03272420E6BC00E859D2 /* TeamCell.swift in Sources */,
 				84CF0397242544E000E859D2 /* TeamsRouter.swift in Sources */,
 				845D4F7A2427CC4B006E135C /* TeamsServiceActionsFactoryImp.swift in Sources */,
 				84CF035B2423A8DB00E859D2 /* TeamsServiceActionsFactory.swift in Sources */,
 				84CF03512422F92000E859D2 /* WebServiceAction.swift in Sources */,
+				84583A4524318A6800DF32B0 /* WebServiceActions+Teams.swift in Sources */,
 				84CF038B2425387A00E859D2 /* ReusableIdentifier.swift in Sources */,
 				84CF03302421A76800E859D2 /* AppColors.swift in Sources */,
 				84CF032E2421843900E859D2 /* TeamDetailsViewImp.swift in Sources */,
@@ -865,6 +899,7 @@
 				84CF034F2422D8E400E859D2 /* URLRequestBuilder.swift in Sources */,
 				845D4F83242807F8006E135C /* OverwatchLeagueWebServiceConfiguration.swift in Sources */,
 				84CF034D2422D87700E859D2 /* URLResponseErrorParser.swift in Sources */,
+				84583A41243185AB00DF32B0 /* TeamsWebService.swift in Sources */,
 				84CF0336242264ED00E859D2 /* TeamsRouterImp.swift in Sources */,
 				845D4F732427C761006E135C /* TeamLogoNetworkModel+Main.swift in Sources */,
 				84CF03472422D51900E859D2 /* RequestExecuterImp.swift in Sources */,
@@ -876,6 +911,7 @@
 				845D4F712427C6B8006E135C /* TeamLogoNetworkModel.swift in Sources */,
 				84CF03862425337A00E859D2 /* TeamsView.swift in Sources */,
 				84CF033A2422B9E800E859D2 /* TeamDetailsModuleAssembler.swift in Sources */,
+				84583A392431847B00DF32B0 /* RequestExecuter.swift in Sources */,
 				84CF032C2421816F00E859D2 /* TeamDetailsViewControllerImp.swift in Sources */,
 				845E73B624206B6C0056609D /* TeamsViewImp.swift in Sources */,
 				84CF03602423E02D00E859D2 /* RealmFactory.swift in Sources */,
